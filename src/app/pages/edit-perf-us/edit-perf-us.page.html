@@ -1,0 +1,138 @@
+<ion-menu contentId="main-content" menuId="m1" side="start">
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-title>Menú</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content class="ion-padding">
+    <!-- Botones del menú -->
+    <ion-list>
+      <!-- Botón de Viajes -->
+      <ion-item button [routerLink]="['/index-us']">
+        
+        <ion-icon slot="start" name="git-pull-request"></ion-icon>
+        <ion-label>Viajes</ion-label>
+        
+      </ion-item>
+
+      <!-- Botón de Viajes solicitados -->
+      <ion-item button [routerLink]="['/solicitud-us']">
+        <ion-icon slot="start" name="briefcase-outline"></ion-icon>
+        <ion-label>Viajes solicitados</ion-label>
+      </ion-item>
+
+      <!-- Botón de Historial -->
+      <ion-item button [routerLink]="['/viajes-us']">
+        <ion-icon slot="start" name="time-outline"></ion-icon>
+        <ion-label>Historial de viajes</ion-label>
+ 
+      </ion-item>
+
+      <!-- Botón de Seguridad -->
+      <ion-item button [routerLink]="['/seguridad-us']">
+        <ion-icon slot="start" name="shield-checkmark-outline"></ion-icon>
+        <ion-label>Seguridad</ion-label>
+      </ion-item>
+
+      <!-- Botón de Modo Conductor con color diferente y redondeado -->
+      <ion-item button color="secondary" class="driver-mode-button" lines="none" [routerLink]="['/info-uc']">
+        <ion-icon slot="start" name="car-outline"></ion-icon>
+        <ion-label>Modo Conductor</ion-label>
+   
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+
+<!-- Contenido principal -->
+<div class="ion-page" id="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <!-- Botón del menú a la izquierda -->
+      <ion-buttons slot="start">
+        <ion-menu-button menu="m1"></ion-menu-button>
+      </ion-buttons>
+
+      <!-- Título centrado -->
+      <ion-title class="ion-text-center">UrbanMove</ion-title>
+      <!-- Botón de perfil al final de la barra -->
+      <ion-buttons slot="end">
+        <ion-button [routerLink]="['/perfil-us']">
+          <ion-icon slot="icon-only" name="person-circle-outline"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+<!-- Termina el header -->
+<!-- comienza el contenido -->
+
+<ion-content class="ion-padding">
+  <ion-grid>
+    <ion-row>
+      <!-- Flecha hacia la izquierda (start) -->
+      <ion-col size="auto">
+        <ion-button fill="clear" [routerLink]="['/perfil-us']">
+          <ion-icon name="chevron-back-outline" color="primary"></ion-icon>
+        </ion-button>
+      </ion-col>
+      <!-- Título centrado -->
+      <ion-col size="auto" class="ion-text-center">
+        <h3>Editar  Usuario</h3>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <form>
+    <!-- Nombre -->
+    <ion-item class="form-item">
+      <ion-icon slot="start" name="person-outline" color="primary"></ion-icon>
+      <ion-label color="primary" position="floating">Nombre</ion-label>
+      <ion-input type="text" name="nombre" required></ion-input>
+    </ion-item>
+
+    <!-- Apellido -->
+    <ion-item class="form-item">
+      <ion-icon slot="start" name="person-outline" color="primary"></ion-icon>
+      <ion-label color="primary" position="floating">Apellido</ion-label>
+      <ion-input type="text" name="apellido" required></ion-input>
+    </ion-item>
+
+    <!-- Número de Teléfono -->
+    <ion-item class="form-item">
+      <ion-icon slot="start" name="call-outline" color="primary"></ion-icon>
+      <ion-label color="primary" position="floating">Número de Teléfono</ion-label>
+      <ion-input type="tel" name="telefono" required></ion-input>
+    </ion-item>
+
+    <!-- Correo Institucional -->
+    <ion-item class="form-item">
+      <ion-icon slot="start" name="mail-outline" color="primary"></ion-icon>
+      <ion-label color="primary" position="floating">Correo Institucional Duoc UC</ion-label>
+      <ion-input type="email" name="correo" required></ion-input>
+    </ion-item>
+
+    <!-- Contraseña -->
+    <ion-item class="form-item">
+      <ion-icon slot="start" name="lock-closed-outline" color="primary"></ion-icon>
+      <ion-label color="primary" position="floating">Contraseña</ion-label>
+      <ion-input type="password" name="contrasena" required></ion-input>
+    </ion-item>
+
+    <!-- Confirmar Contraseña -->
+    <ion-item class="form-item">
+      <ion-icon slot="start" name="lock-closed-outline" color="primary"></ion-icon>
+      <ion-label color="primary" position="floating">Confirmar Contraseña</ion-label>
+      <ion-input type="password" name="confirmarContrasena" required></ion-input>
+    </ion-item>
+
+    <!-- Botón Guardar Cambios -->
+    <ion-button id="prese" expand="full" color="secondary" >Guardar Cambios</ion-button>
+    <ion-alert trigger="prese" class="custom-alert" header="¿Seguro que quieres guardar estos cambios?" [buttons]="alertButtons"></ion-alert>
+   
+
+  </form>
+</ion-content>
+
+</div>

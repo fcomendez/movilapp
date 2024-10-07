@@ -1,0 +1,62 @@
+.travel-card {
+    border-radius: 10px;
+    box-shadow: 0px 2px 4px rgba(32, 76, 197, 0.1);
+    margin: 10px;
+  }
+  
+  .travel-info {
+    margin-bottom: 15px;
+  }
+  
+  .travel-info h3 {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .travel-info p {
+    font-size: 0.9rem;
+    color: #2d69d8; /* Gris oscuro */
+  }
+  
+  .driver-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .driver-photo {
+    margin-right: 10px;
+  }
+  
+  .driver-photo img {
+    border-radius: 50%; /* Círculo */
+    width: 60px;
+    height: 60px;
+  }
+  
+  .driver-details h3 {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .driver-details p {
+    font-size: 0.9rem;
+    color: #2d69d8; /* Gris oscuro */
+  }
+  
+  .button-group {
+    display: flex;
+    gap: 10px;
+  }
+  
+  ion-button {
+    --border-radius: 5px; /* Borde redondeado para los botones */
+  }
+  h2 {
+    
+    color: #ffffff; /* Cambia el color del texto */
+    
+    font-weight: bold; /* Cambia el peso del texto */
+  }

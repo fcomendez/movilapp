@@ -1,0 +1,167 @@
+<ion-menu contentId="main-content" menuId="m9" side="start">
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-title>Menú</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content class="ion-padding">
+    <!-- Botones del menú -->
+    <ion-list>
+      <!-- Botón de Viajes -->
+      <ion-item button [routerLink]="['/index-us']">
+        
+        <ion-icon slot="start" name="git-pull-request"></ion-icon>
+        <ion-label>Viajes</ion-label>
+        
+      </ion-item>
+
+      <!-- Botón de Viajes solicitados -->
+      <ion-item button [routerLink]="['/solicitud-us']">
+        <ion-icon slot="start" name="briefcase-outline"></ion-icon>
+        <ion-label>Viajes solicitados</ion-label>
+      </ion-item>
+
+      <!-- Botón de Historial -->
+      <ion-item button [routerLink]="['/viajes-us']">
+        <ion-icon slot="start" name="time-outline"></ion-icon>
+        <ion-label>Historial de viajes</ion-label>
+ 
+      </ion-item>
+
+      <!-- Botón de Seguridad -->
+      <ion-item button [routerLink]="['/seguridad-us']">
+        <ion-icon slot="start" name="shield-checkmark-outline"></ion-icon>
+        <ion-label>Seguridad</ion-label>
+      </ion-item>
+
+      <!-- Botón de Modo Conductor con color diferente y redondeado -->
+      <ion-item button color="secondary" class="driver-mode-button" lines="none" [routerLink]="['/info-uc']">
+        <ion-icon slot="start" name="car-outline"></ion-icon>
+        <ion-label>Modo Conductor</ion-label>
+   
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+
+<!-- Contenido principal -->
+<div class="ion-page" id="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <!-- Botón del menú a la izquierda -->
+      <ion-buttons slot="start">
+        <ion-menu-button menu="m9"></ion-menu-button>
+      </ion-buttons>
+
+      <!-- Título centrado -->
+      <ion-title class="ion-text-center">UrbanMove</ion-title>
+      <!-- Botón de perfil al final de la barra -->
+      <ion-buttons slot="end">
+        <ion-button [routerLink]="['/perfil-us']">
+          <ion-icon slot="icon-only" name="person-circle-outline"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+<!-- Termina el header -->
+<!-- comienza el contenido -->
+
+<ion-content padding>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title class="title-center">Documentos Necesarios para Registrarse como Conductor</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-list lines="full">
+        <!-- Marca del Auto -->
+        <ion-item>
+          <ion-icon name="car-outline" slot="start" color="primary"></ion-icon>
+          <ion-label>
+            <h3>Marca del Auto</h3>
+            <p>Proporciona la marca del vehículo que utilizarás para ofrecer los viajes.</p>
+          </ion-label>
+        </ion-item>
+
+        <!-- Modelo del Auto -->
+        <ion-item>
+          <ion-icon name="build-outline" slot="start" color="secondary"></ion-icon>
+          <ion-label>
+            <h3>Modelo del Auto</h3>
+            <p>Indica el modelo de tu vehículo.</p>
+          </ion-label>
+        </ion-item>
+
+        <!-- Patente del Auto -->
+        <ion-item>
+          <ion-icon name="barcode-outline" slot="start" color="primary"></ion-icon>
+          <ion-label>
+            <h3>Patente del Auto</h3>
+            <p>La patente del vehículo es obligatoria para identificarlo legalmente.</p>
+          </ion-label>
+        </ion-item>
+
+        <!-- Año del Auto -->
+        <ion-item>
+          <ion-icon name="calendar-outline" slot="start" color="secondary"></ion-icon>
+          <ion-label>
+            <h3>Año del Auto</h3>
+            <p>Se debe proporcionar el año de fabricación de tu vehículo.</p>
+          </ion-label>
+        </ion-item>
+
+        <!-- Revisión Técnica al Día -->
+        <ion-item>
+          <ion-icon name="checkmark-circle-outline" slot="start" color="primary"></ion-icon>
+          <ion-label>
+            <h3>Revisión Técnica al Día</h3>
+            <p>Debes tener la revisión técnica del vehículo actualizada.</p>
+          </ion-label>
+        </ion-item>
+
+        <!-- Permiso de Circulación -->
+        <ion-item>
+          <ion-icon name="document-text-outline" slot="start" color="secondary"></ion-icon>
+          <ion-label>
+            <h3>Permiso de Circulación</h3>
+            <p>El permiso de circulación vigente es necesario para operar legalmente el vehículo.</p>
+          </ion-label>
+        </ion-item>
+
+        <!-- Seguro Obligatorio (SOAP) -->
+        <ion-item>
+          <ion-icon name="shield-checkmark-outline" slot="start" color="primary"></ion-icon>
+          <ion-label>
+            <h3>Seguro Obligatorio de Accidentes (SOAP)</h3>
+            <p>Este seguro es obligatorio para cubrir daños personales en caso de accidente.</p>
+          </ion-label>
+        </ion-item>
+
+        <!-- Licencia de Conducir -->
+        <ion-item>
+          <ion-icon name="card-outline" slot="start" color="secondary"></ion-icon>
+          <ion-label>
+            <h3>Licencia de Conducir</h3>
+            <p>Debes tener una licencia de conducir válida y en regla.</p>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Checkbox de términos y condiciones -->
+  <ion-item lines="none">
+    <ion-checkbox slot="start"></ion-checkbox>
+    <ion-label>He leído todo y acepto los términos</ion-label>
+  </ion-item>
+
+  <!-- Botón de registro -->
+  <ion-button expand="block" color="success"[routerLink]="['/vehicle-form']">
+    Registrarse como Conductor
+  </ion-button>
+</ion-content>
+
+
+</div>

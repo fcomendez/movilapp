@@ -1,0 +1,146 @@
+<ion-menu contentId="main-content" menuId="m8" side="start">
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-title>Menú</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content class="ion-padding">
+    <!-- Botones del menú -->
+    <ion-list>
+      <!-- Botón de Viajes -->
+      <ion-item button [routerLink]="['/index-us']">
+        
+        <ion-icon slot="start" name="git-pull-request"></ion-icon>
+        <ion-label>Viajes</ion-label>
+        
+      </ion-item>
+
+      <!-- Botón de Viajes solicitados -->
+      <ion-item button [routerLink]="['/solicitud-us']">
+        <ion-icon slot="start" name="briefcase-outline"></ion-icon>
+        <ion-label>Viajes solicitados</ion-label>
+      </ion-item>
+
+      <!-- Botón de Historial -->
+      <ion-item button [routerLink]="['/viajes-us']">
+        <ion-icon slot="start" name="time-outline"></ion-icon>
+        <ion-label>Historial de viajes</ion-label>
+ 
+      </ion-item>
+
+      <!-- Botón de Seguridad -->
+      <ion-item button [routerLink]="['/seguridad-us']">
+        <ion-icon slot="start" name="shield-checkmark-outline"></ion-icon>
+        <ion-label>Seguridad</ion-label>
+      </ion-item>
+
+      <!-- Botón de Modo Conductor con color diferente y redondeado -->
+      <ion-item button color="secondary" class="driver-mode-button" lines="none" [routerLink]="['/info-uc']">
+        <ion-icon slot="start" name="car-outline"></ion-icon>
+        <ion-label>Modo Conductor</ion-label>
+   
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+
+<!-- Contenido principal -->
+<div class="ion-page" id="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <!-- Botón del menú a la izquierda -->
+      <ion-buttons slot="start">
+        <ion-menu-button menu="m8"></ion-menu-button>
+      </ion-buttons>
+
+      <!-- Título centrado -->
+      <ion-title class="ion-text-center">UrbanMove</ion-title>
+      <!-- Botón de perfil al final de la barra -->
+      <ion-buttons slot="end">
+        <ion-button [routerLink]="['/perfil-us']">
+          <ion-icon slot="icon-only" name="person-circle-outline"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+<!-- Termina el header -->
+<!-- comienza el contenido -->
+<ion-content class="ion-padding">
+    <ion-grid>
+      <ion-row class="ion-align-items-center">
+        <!-- Flecha hacia la izquierda -->
+        <ion-col size="auto">
+          <ion-button fill="clear" [routerLink]="['/viajes-us']">
+            <ion-icon name="chevron-back-outline"></ion-icon>
+          </ion-button>
+        </ion-col>
+        
+        <!-- Título centrado -->
+        <ion-col size="7">
+          <h3 class="ion-text-center">Viaje solicitado</h3>
+        </ion-col>
+
+        
+      </ion-row>
+    </ion-grid>
+    <!-- Lista de viajes -->
+    
+      <!-- Información del Viaje -->
+      <ion-card color="secondary">
+        <ion-card-header>
+          <ion-card-title>Información del Viaje</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <div class="travel-info">
+            <h2>Hora de Salida:</h2>
+            <p>08:00 AM</p>
+    
+            <h2>Fecha del Viaje:</h2>
+            <p>20 de Septiembre, 2024</p>
+    
+            <h2>Lugar de Salida:</h2>
+            <p>Penco, La Heras</p>
+    
+            <h2>Lugar de Destino:</h2>
+            <p>Concepción, Tucapel con O'Higgins y Barros</p>
+    
+            <h2>Valor del Viaje:</h2>
+            <p>$2,000 por persona</p>
+          </div>
+        </ion-card-content>
+      
+    
+      <!-- Información del Conductor -->
+        <ion-card-header>
+          <ion-card-title>Información del Conductor</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <div class="driver-info">
+            <!-- Foto del Conductor en formato circular -->
+            <ion-avatar class="driver-photo" style="margin-bottom: 20px;">
+              <img src="assets/img/driver.jpg" alt="Foto del Conductor" style="border-radius: 50%; width: 100px; height: 100px;">
+            </ion-avatar>
+    
+            <!-- Detalles del Conductor -->
+            <div class="driver-details">
+              <h2>Nombre del Conductor:</h2>
+              <p>Juan Pérez</p>
+    
+              <h2>Número Telefónico:</h2>
+              <p>+56 9 1234 5678</p>
+    
+              <h2>Marca del Auto:</h2>
+              <p>Hyundai Elantra</p>
+    
+              <h2>Patente del Auto:</h2>
+              <p>ABCD-1234</p>
+            </div>
+          </div>
+        </ion-card-content>
+      </ion-card>
+    
+    
+  </ion-content>
+</div>

@@ -1,0 +1,123 @@
+<ion-menu contentId="main-content" menuId="m6" side="start">
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-title>Menú</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content class="ion-padding">
+    <!-- Botones del menú -->
+    <ion-list>
+      <!-- Botón de Viajes -->
+      <ion-item button [routerLink]="['/index-us']">
+        
+        <ion-icon slot="start" name="git-pull-request"></ion-icon>
+        <ion-label>Viajes</ion-label>
+        
+      </ion-item>
+
+      <!-- Botón de Viajes solicitados -->
+      <ion-item button [routerLink]="['/solicitud-us']">
+        <ion-icon slot="start" name="briefcase-outline"></ion-icon>
+        <ion-label>Viajes solicitados</ion-label>
+      </ion-item>
+
+      <!-- Botón de Historial -->
+      <ion-item button [routerLink]="['/viajes-us']">
+        <ion-icon slot="start" name="time-outline"></ion-icon>
+        <ion-label>Historial de viajes</ion-label>
+ 
+      </ion-item>
+
+      <!-- Botón de Seguridad -->
+      <ion-item button [routerLink]="['/seguridad-us']">
+        <ion-icon slot="start" name="shield-checkmark-outline"></ion-icon>
+        <ion-label>Seguridad</ion-label>
+      </ion-item>
+
+      <!-- Botón de Modo Conductor con color diferente y redondeado -->
+      <ion-item button color="secondary" class="driver-mode-button" lines="none" [routerLink]="['/info-uc']">
+        <ion-icon slot="start" name="car-outline"></ion-icon>
+        <ion-label>Modo Conductor</ion-label>
+   
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+
+<!-- Contenido principal -->
+<div class="ion-page" id="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <!-- Botón del menú a la izquierda -->
+      <ion-buttons slot="start">
+        <ion-menu-button menu="m6"></ion-menu-button>
+      </ion-buttons>
+
+      <!-- Título centrado -->
+      <ion-title class="ion-text-center">UrbanMove</ion-title>
+      <!-- Botón de perfil al final de la barra -->
+      <ion-buttons slot="end">
+        <ion-button [routerLink]="['/perfil-us']">
+          <ion-icon slot="icon-only" name="person-circle-outline"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+<!-- Termina el header -->
+<!-- comienza el contenido -->
+
+  <ion-content class="ion-padding">
+    <div class="profile-container">
+    <!-- Imagen de perfil en círculo con fondo gris -->
+    <div class="profile-image-container">
+      <div class="profile-image-wrapper">
+        <img src="assets/img/profile-placeholder.png" alt="Foto de perfil" class="profile-image">
+      </div>
+    </div>
+  
+      <!-- Información del perfil -->
+      <ion-card class="profile-card">
+        <ion-card-header>
+          <ion-text color="primary">
+            <h2 class="ion-text-center">Perfil de Usuario</h2>
+          </ion-text>
+        </ion-card-header>
+  
+        <ion-card-content>
+          <!-- Campo de nombre -->
+          <ion-item>
+            <ion-label>Nombre:</ion-label>
+            <ion-text color="medium">Alejandro</ion-text>
+          </ion-item>
+  
+          <!-- Campo de apellido -->
+          <ion-item>
+            <ion-label>Apellido:</ion-label>
+            <ion-text color="medium">Zapata</ion-text>
+          </ion-item>
+  
+          <!-- Campo de teléfono -->
+          <ion-item>
+            <ion-label>Número de Teléfono:</ion-label>
+            <ion-text color="medium">+56 9 1234 5678</ion-text>
+          </ion-item>
+  
+          <!-- Campo de correo institucional -->
+          <ion-item>
+            <ion-label>Correo Institucional:</ion-label>
+            <ion-text color="medium">juan.perezduocuc.cl</ion-text>
+          </ion-item>
+        </ion-card-content>
+      </ion-card>
+         
+      <ion-button id="presen" color="danger" >Cerrar sesion</ion-button>
+      <ion-alert trigger="presen" class="custom-alert" header="¿Seguro que quieres cerrar sesion?" [buttons]="alertButtons"></ion-alert>
+     
+      <ion-button expand="block" type="submit" class="login-button" color="primary"[routerLink]="['/edit-perf-us']">
+        Editar perfil
+      </ion-button>
+    </div>
+  </ion-content>
+  

@@ -1,0 +1,22 @@
+.message-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-align: center; /* Centrar texto */
+  }
+  
+  h2 {
+    margin-bottom: 10px; /* Espacio debajo del título */
+  }
+  
+  p {
+    margin-bottom: 20px; /* Espacio debajo del párrafo */
+  }
+  
+  ion-button {
+    margin: 10px 0; /* Espaciado entre botones */
+    width: 80%; /* Ancho del botón */
+  }
+  

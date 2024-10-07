@@ -1,0 +1,81 @@
+<ion-app>
+  <!-- Menú lateral -->
+  <ion-menu content-id="main-content">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Menú</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="ion-padding text-center">
+      <img src="assets/img/user-placeholder.png" alt="Usuario" class="user-image" />
+      <h1>wacoldo</h1>
+      <ion-list>
+        <ion-item routerLink="/index-uc" routerDirection="root">
+          <ion-label>Inicio</ion-label>
+        </ion-item>
+        <ion-item routerLink="/viajes-us" routerDirection="root">
+          <ion-label>Historial Usuario</ion-label>
+        </ion-item>
+        <ion-item routerLink="/historial-conductor" routerDirection="root">
+          <ion-label>Historial Conductor</ion-label>
+        </ion-item>
+        <ion-item routerLink="/seguridad-us" routerDirection="root">
+          <ion-label>Seguridad</ion-label>
+        </ion-item>
+        <ion-item routerLink="/edit-perf-us" routerDirection="root">
+          <ion-label>Configuración Perfil</ion-label>
+        </ion-item>
+        <ion-item routerLink="/confi-vehiculo" routerDirection="root">
+          <ion-label>Configuración Vehículo</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+
+  <!-- Contenido principal -->
+  <ion-router-outlet id="main-content"></ion-router-outlet>
+
+  <!-- Encabezado de la página principal -->
+  <div class="ion-page" id="main-content">
+    <ion-header>
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>Crear Viaje</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="ion-padding">
+      <form id="viajeForm">
+        <ion-item>
+          <ion-label position="floating">Fecha</ion-label>
+          <ion-input name="Fecha" required></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Hora de Inicio</ion-label>
+          <ion-input name="Hora" required></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Lugar de Inicio</ion-label>
+          <ion-input name="lugarInicio" required></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Destino</ion-label>
+          <ion-input name="destino" required></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Valor</ion-label>
+          <ion-input type="number" name="valor" required></ion-input>
+        </ion-item>
+
+        <ion-button expand="block" routerLink="/index-uc" class="create-button">
+          Crear Viaje
+        </ion-button>
+      </form>
+    </ion-content>
+  </div>
+</ion-app>

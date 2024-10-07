@@ -1,0 +1,84 @@
+<ion-menu contentId="main-content" menuId="m13" side="start">
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-title>Menú</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content class="ion-padding">
+    <!-- Botones del menú -->
+    <ion-list>
+      <!-- Botón de Viajes -->
+      <ion-item button [routerLink]="['/index-adm']">
+        <ion-label>Menu principal</ion-label>
+      </ion-item>
+
+            <!-- Botón de Registro de viajes realizados -->
+      <ion-item button [routerLink]="['/reg-viajes-adm']">
+        <ion-label>Registro de viajes realizados</ion-label>
+      </ion-item>
+
+      <!-- Botón de Registro de viajes -->
+      <ion-item button [routerLink]="['/reg-us-adm']">
+        <ion-label>Registro de usuarios</ion-label>
+      </ion-item>
+
+      <!-- Botón de Registro de conductores -->
+      <ion-item button [routerLink]="['/reg-uc-adm']">
+        <ion-label>Registro de conductores</ion-label>
+      </ion-item>
+      <!-- Botón de Solicitud de cuenta conductores -->
+      <ion-item button [routerLink]="['/solic-uc-adm']">
+        <ion-label>Solicitud de cuenta conductores</ion-label>
+      </ion-item>
+      
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+
+<!-- Contenido principal -->
+<div class="ion-page" id="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <!-- Botón del menú a la izquierda -->
+      <ion-buttons slot="start">
+        <ion-menu-button menu="m13"></ion-menu-button>
+      </ion-buttons>
+
+      <!-- Título centrado -->
+      <ion-title class="ion-text-center">UrbanMove</ion-title>
+      <!-- Botón de perfil al final de la barra -->
+      <ion-buttons slot="end">
+        <ion-button [routerLink]="['/perfil-us']">
+          <ion-icon slot="icon-only" name="person-circle-outline"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+<!-- Termina el header -->
+<!-- comienza el contenido -->
+
+<ion-content class="ion-padding">
+  <h2 class="ion-text-center" color="primary">Viajes Realizados</h2>
+
+  <!-- Lista de viajes -->
+  <ion-list>
+    <!-- Repite este bloque para cada viaje -->
+    <ion-item *ngFor="let viaje of viajes" lines="full">
+      <ion-label>
+        <h3>Fecha y Hora: {{ viaje.fechaHora }}</h3>
+        <p>Lugar de Salida: {{ viaje.lugarSalida }}</p>
+        <p>Destino: {{ viaje.destino }}</p>
+        <p>Valor: ${{ viaje.valor }}</p>
+      </ion-label>
+      <ion-button color="primary" slot="end"  [routerLink]="['/det-viajes-adm']">
+        Detalles del viaje
+      </ion-button>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+
+
+</div>

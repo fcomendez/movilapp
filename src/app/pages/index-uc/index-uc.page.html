@@ -1,0 +1,132 @@
+
+<ion-app>
+  <!-- Menú lateral -->
+  <ion-menu content-id="main-content">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Menu Content</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="ion-padding text-center">
+      <img src="assets/img/user-placeholder.png" alt="Usuario" class="user-image" />
+      <ion-item routerLink="/index-uc" routerDirection="root">
+        <h1>wacoldo</h1>
+      </ion-item>
+    
+      <ion-list>
+        <ion-item routerLink="/viajes-us" routerDirection="root">
+          <ion-label>Historial Usuario</ion-label>
+        </ion-item>
+        <ion-item routerLink="/historial-conductor" routerDirection="root">
+          <ion-label>Historial Conductor</ion-label>
+        </ion-item>
+        <ion-item routerLink="/seguridad-us" routerDirection="root">
+          <ion-label>Seguridad</ion-label>
+        </ion-item>
+        <ion-item routerLink="/edit-perf-us" routerDirection="root">
+          <ion-label>Configuración Perfil</ion-label>
+        </ion-item>
+        <ion-item routerLink="/confi-vehiculo" routerDirection="root">
+          <ion-label>Configuración Vehículo</ion-label>
+        </ion-item>
+
+      </ion-list>
+    </ion-content>
+    
+  </ion-menu>
+
+  <!-- Contenido principal -->
+  <ion-router-outlet id="main-content"></ion-router-outlet>
+
+  <!-- Encabezado de la página principal -->
+  <div class="ion-page" id="main-content">
+    <ion-header>
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="ion-padding">
+      <h2 class="ion-text-center">Viajes disponibles</h2>
+      
+      <!-- Filtros -->
+    <ion-grid>
+      <h6 class="ion-text-center" style="color: gray;">Filtrar por comuna</h6>
+      
+      <ion-row>
+        <ion-col size="6">
+          <ion-item>
+            <ion-label>Destino:</ion-label>
+            <ion-select >
+              <ion-select-option>Duoc uc</ion-select-option>
+              <ion-select-option>Penco</ion-select-option>
+              <ion-select-option>Hualpén</ion-select-option>
+              <ion-select-option>Concepción</ion-select-option>
+              <ion-select-option>Talcahuano</ion-select-option>
+              <ion-select-option>San Pedro de la Paz</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6">
+          <ion-item>
+            <ion-label>Salida:</ion-label>
+            <ion-select >
+              <ion-select-option>Duoc uc</ion-select-option>
+              <ion-select-option>Penco</ion-select-option>
+              <ion-select-option>Hualpén</ion-select-option>
+              <ion-select-option>Concepción</ion-select-option>
+              <ion-select-option>Talcahuano</ion-select-option>
+              <ion-select-option>San Pedro de la Paz</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+      
+      
+      <!-- Lista de viajes -->
+      <ion-list>
+        <!-- Viaje 1 -->
+        <ion-item class="viaje">
+          <ion-label >
+            <h4>Fecha de Salida: 20/09/24 - 08:00 AM</h4>
+            <p>Lugar de Destino: Penco, la heras</p>
+            <p>Lugar de Salida: Duoc uc</p>
+            <p>Valor del Viaje: $3,000 por persona</p>
+          </ion-label>
+          <ion-icon name="chevron-forward-outline" slot="end" class="travel-icon" [routerLink]="['/desc-viaje-us']"></ion-icon>
+        </ion-item>
+  
+        <!-- Viaje 2 -->
+        <ion-item class="viaje">
+          <ion-label>
+            <h4>Fecha de Salida: 20/09/24 - 08:00 AM</h4>
+            <p>Lugar de Destino: Hualpen, la floresta 3</p>
+            <p>Lugar de Salida: Duoc uc</p>
+            <p>Valor del Viaje: $1,000 por persona</p>
+          </ion-label>
+          <ion-icon name="chevron-forward-outline" slot="end" class="travel-icon" [routerLink]="['/desc-viaje-us']"></ion-icon>
+        </ion-item>
+  
+        <!-- Viaje 3 -->
+        <ion-item class="viaje">
+          <ion-label>
+            <h4>Fecha de Salida: 20/09/24 - 08:00 AM</h4>
+            <p>Lugar de Destino: Concepción ,tucapel con ohiggins y barros</p>
+            <p>Lugar de Salida: Duoc uc</p>
+            <p>Valor del Viaje: $2,000 por persona</p>
+          </ion-label>
+          <ion-icon name="chevron-forward-outline" slot="end" class="travel-icon" [routerLink]="['/desc-viaje-us']"></ion-icon>
+        </ion-item>
+        
+        <!-- Agrega más viajes aquí si es necesario -->
+      </ion-list>
+      <ion-button expand="block" routerLink="/crear-viaje-uc">
+          Crear viaje
+        </ion-button>
+    </ion-content>
+  </div>
+  
+</ion-app>

@@ -1,0 +1,122 @@
+<ion-menu contentId="main-content" menuId="m17" side="start">
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-title>Menú</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content class="ion-padding">
+    <!-- Botones del menú -->
+    <ion-list>
+      <!-- Botón de Viajes -->
+      <ion-item button [routerLink]="['/index-adm']">
+        <ion-label>Menu principal</ion-label>
+      </ion-item>
+
+            <!-- Botón de Registro de viajes realizados -->
+      <ion-item button [routerLink]="['/reg-viajes-adm']">
+        <ion-label>Registro de viajes realizados</ion-label>
+      </ion-item>
+
+      <!-- Botón de Registro de viajes -->
+      <ion-item button [routerLink]="['/reg-us-adm']">
+        <ion-label>Registro de usuarios</ion-label>
+      </ion-item>
+
+      <!-- Botón de Registro de conductores -->
+      <ion-item button [routerLink]="['/reg-uc-adm']">
+        <ion-label>Registro de conductores</ion-label>
+      </ion-item>
+      <!-- Botón de Solicitud de cuenta conductores -->
+      <ion-item button [routerLink]="['/solic-uc-adm']">
+        <ion-label>Solicitud de cuenta conductores</ion-label>
+      </ion-item>
+      
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+
+<!-- Contenido principal -->
+<div class="ion-page" id="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <!-- Botón del menú a la izquierda -->
+      <ion-buttons slot="start">
+        <ion-menu-button menu="m17"></ion-menu-button>
+      </ion-buttons>
+
+      <!-- Título centrado -->
+      <ion-title class="ion-text-center">UrbanMove</ion-title>
+      <!-- Botón de perfil al final de la barra -->
+      <ion-buttons slot="end">
+        <ion-button [routerLink]="['/perfil-us']">
+          <ion-icon slot="icon-only" name="person-circle-outline"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+<!-- Termina el header -->
+<!-- comienza el contenido -->
+<ion-content class="ion-padding">
+    
+
+  <ion-grid>
+    <ion-row>
+      <!-- Flecha hacia la izquierda (start) -->
+      <ion-col size="auto">
+        <ion-button fill="clear" [routerLink]="['/reg-us-adm']">
+        <ion-icon name="chevron-back-outline"></ion-icon>
+      </ion-button>
+    </ion-col>
+    <!-- Título centrado -->
+      <ion-col size="auto">
+        <h3>Agregar usuario adm</h3>
+      </ion-col>
+      
+      
+    </ion-row>
+  </ion-grid>
+  <form>
+    <!-- Nombre -->
+    <ion-item class="form-item">
+      <ion-label color="primary" position="floating">Nombre</ion-label>
+      <ion-input type="text" name="nombre" required></ion-input>
+    </ion-item>
+
+    <!-- Apellido -->
+    <ion-item class="form-item">
+      <ion-label color="primary" position="floating">Apellido</ion-label>
+      <ion-input type="text" name="apellido" required></ion-input>
+    </ion-item>
+
+    <!-- Número de Teléfono -->
+    <ion-item class="form-item">
+      <ion-label color="primary" position="floating">Número de Teléfono</ion-label>
+      <ion-input type="tel" name="telefono" required></ion-input>
+    </ion-item>
+
+    <!-- Correo Institucional -->
+    <ion-item class="form-item">
+      <ion-label color="primary" position="floating">Correo Institucional Duoc UC</ion-label>
+      <ion-input type="email" name="correo" required></ion-input>
+    </ion-item>
+
+    <!-- Contraseña -->
+    <ion-item class="form-item">
+      <ion-label color="primary" position="floating">Contraseña</ion-label>
+      <ion-input type="password" name="contrasena" required></ion-input>
+    </ion-item>
+
+    <!-- Confirmar Contraseña -->
+    <ion-item class="form-item">
+      <ion-label color="primary" position="floating">Confirmar Contraseña</ion-label>
+      <ion-input type="password" name="confirmarContrasena" required></ion-input>
+    </ion-item>
+
+    <!-- Botón Registrar -->
+    <ion-button expand="full" color="secondary" type="submit" [routerLink]="['/reg-us-adm']">
+      Registrar
+    </ion-button>
+  </form>
+</ion-content>

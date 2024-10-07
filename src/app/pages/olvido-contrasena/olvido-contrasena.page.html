@@ -1,0 +1,84 @@
+
+
+<!-- Contenido principal -->
+<div class="ion-page" id="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <!-- Título centrado -->
+      <ion-title class="ion-text-center">UrbanMove</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+
+  
+  <ion-content class="ion-padding">
+
+    <ion-grid>
+      <ion-row>
+        <!-- Flecha hacia la izquierda (start) -->
+        <ion-col size="auto">
+          <ion-button fill="clear" [routerLink]="['/index']">
+            <ion-icon name="chevron-back-outline"></ion-icon>
+       
+          </ion-button>
+        </ion-col>
+        
+      </ion-row>
+    </ion-grid>
+    <ng-container *ngIf="step === 1">
+      <!-- Paso 1: Ingresar correo -->
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>¿Olvidaste tu contraseña?</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <p>Por favor, introduce tu correo electrónico para restablecer tu contraseña.</p>
+          <ion-item>
+            <ion-label position="floating">Correo Electrónico</ion-label>
+            <ion-input type="email"></ion-input>
+          </ion-item>
+          <ion-button expand="full" color="primary" class="ion-margin-top" (click)="nextStep()">Enviar</ion-button>
+        </ion-card-content>
+      </ion-card>
+    </ng-container>
+  
+    <ng-container *ngIf="step === 2">
+      <!-- Paso 2: Mostrar mensaje de código de verificación -->
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>Código enviado</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <p>Se ha enviado un código de verificación a tu correo electrónico.</p>
+          <ion-item>
+            <ion-label position="floating">Código de verificación</ion-label>
+            <ion-input type="text"></ion-input>
+          </ion-item>
+          <ion-button expand="full" color="primary" class="ion-margin-top" (click)="nextStep()">Verificar</ion-button>
+        </ion-card-content>
+      </ion-card>
+    </ng-container>
+  
+    <ng-container *ngIf="step === 3">
+      <!-- Paso 3: Ingresar nueva contraseña -->
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>Nueva Contraseña</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-item>
+            <ion-label position="floating">Nueva Contraseña</ion-label>
+            <ion-input type="password"></ion-input>
+          </ion-item>
+  
+          <ion-item>
+            <ion-label position="floating">Repetir Contraseña</ion-label>
+            <ion-input type="password"></ion-input>
+          </ion-item>
+  
+          <ion-button expand="full" color="primary" class="ion-margin-top" (click)="savePassword()" [routerLink]="['/index']">Guardar</ion-button>
+        </ion-card-content>
+      </ion-card>
+    </ng-container>
+  </ion-content>
+</div>

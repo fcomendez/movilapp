@@ -1,0 +1,148 @@
+<ion-menu contentId="main-content" menuId="m4" side="start">
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-title>Menú</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content class="ion-padding">
+    <!-- Botones del menú -->
+    <ion-list>
+      <!-- Botón de Viajes -->
+      <ion-item button [routerLink]="['/index-us']">
+        
+        <ion-icon slot="start" name="git-pull-request"></ion-icon>
+        <ion-label>Viajes</ion-label>
+        
+      </ion-item>
+
+      <!-- Botón de Viajes solicitados -->
+      <ion-item button [routerLink]="['/solicitud-us']">
+        <ion-icon slot="start" name="briefcase-outline"></ion-icon>
+        <ion-label>Viajes solicitados</ion-label>
+      </ion-item>
+
+      <!-- Botón de Historial -->
+      <ion-item button [routerLink]="['/viajes-us']">
+        <ion-icon slot="start" name="time-outline"></ion-icon>
+        <ion-label>Historial de viajes</ion-label>
+ 
+      </ion-item>
+
+      <!-- Botón de Seguridad -->
+      <ion-item button [routerLink]="['/seguridad-us']">
+        <ion-icon slot="start" name="shield-checkmark-outline"></ion-icon>
+        <ion-label>Seguridad</ion-label>
+      </ion-item>
+
+      <!-- Botón de Modo Conductor con color diferente y redondeado -->
+      <ion-item button color="secondary" class="driver-mode-button" lines="none" [routerLink]="['/info-uc']">
+        <ion-icon slot="start" name="car-outline"></ion-icon>
+        <ion-label>Modo Conductor</ion-label>
+   
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+
+<!-- Contenido principal -->
+<div class="ion-page" id="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <!-- Botón del menú a la izquierda -->
+      <ion-buttons slot="start">
+        <ion-menu-button menu="m4"></ion-menu-button>
+      </ion-buttons>
+
+      <!-- Título centrado -->
+      <ion-title class="ion-text-center">UrbanMove</ion-title>
+      <!-- Botón de perfil al final de la barra -->
+      <ion-buttons slot="end">
+        <ion-button [routerLink]="['/perfil-us']">
+          <ion-icon slot="icon-only" name="person-circle-outline"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+<!-- Termina el header -->
+<!-- comienza el contenido -->
+
+  <ion-content class="ion-padding">
+    <h2 class="ion-text-center">Seguridad</h2>
+    
+    <!-- Filtros -->
+    
+      <ion-accordion-group>
+        <!-- Protocolo de viaje -->
+        <ion-accordion value="protocolo-viaje">
+          <ion-item slot="header" color="primary">
+            <ion-icon name="document-text-outline" slot="start"></ion-icon>
+            <ion-label>Protocolo de Viaje</ion-label>
+          </ion-item>
+          <div class="ion-padding" slot="content">
+            <p>1. Llegue al punto de encuentro al menos 10 minutos antes de la hora de salida.</p>
+            <p>2. Presente su identificación al conductor antes de abordar.</p>
+            <p>3. Utilice cinturón de seguridad en todo momento durante el viaje.</p>
+            <p>4. No consuma alimentos o bebidas en el vehículo sin el permiso del conductor.</p>
+          </div>
+        </ion-accordion>
+    
+        <!-- Precauciones al viaje -->
+        <ion-accordion value="precauciones-viaje">
+          <ion-item slot="header"  color="secondary">
+            <ion-icon name="alert-circle-outline" slot="start"></ion-icon>
+            <ion-label>Precauciones al Viaje</ion-label>
+          </ion-item>
+          <div class="ion-padding" slot="content">
+            <p>1. Verifique que el conductor sea la persona indicada en la aplicación.</p>
+            <p>2. Comparta su ubicación en tiempo real con un amigo o familiar.</p>
+            <p>3. No proporcione información personal innecesaria al conductor.</p>
+            <p>4. Si se siente incómodo en algún momento, solicite detener el viaje.</p>
+          </div>
+        </ion-accordion>
+    
+        <!-- Condiciones de equipaje -->
+        <ion-accordion value="condiciones-equipaje">
+          <ion-item slot="header" color="primary">
+            <ion-icon name="bag-outline" slot="start"></ion-icon>
+            <ion-label>Condiciones de Equipaje</ion-label>
+          </ion-item>
+          <div class="ion-padding" slot="content">
+            <p>1. Cada pasajero puede llevar una maleta grande y un bolso de mano.</p>
+            <p>2. Cualquier exceso de equipaje deberá ser informado con antelación.</p>
+            <p>3. Los objetos frágiles deben ser transportados bajo responsabilidad del pasajero.</p>
+          </div>
+        </ion-accordion>
+    
+        <!-- Normas de convivencia -->
+        <ion-accordion value="normas-convivencia">
+          <ion-item slot="header" color="secondary">
+            <ion-icon name="people-outline" slot="start"></ion-icon>
+            <ion-label>Normas de Convivencia</ion-label>
+          </ion-item>
+          <div class="ion-padding" slot="content">
+            <p>1. Mantenga un nivel de conversación bajo para no incomodar a otros pasajeros.</p>
+            <p>2. No utilice dispositivos electrónicos con volumen alto.</p>
+            <p>3. Sea respetuoso con el conductor y otros pasajeros.</p>
+          </div>
+        </ion-accordion>
+    
+        <!-- Procedimientos en caso de emergencia -->
+        <ion-accordion value="procedimientos-emergencia">
+          <ion-item slot="header" color="primary">
+            <ion-icon name="medical-outline" slot="start"></ion-icon>
+            <ion-label>Procedimientos en Caso de Emergencia</ion-label>
+          </ion-item>
+          <div class="ion-padding" slot="content">
+            <p>1. Mantenga la calma y siga las instrucciones del conductor en caso de emergencia.</p>
+            <p>2. Use las salidas de emergencia si el vehículo está equipado con ellas.</p>
+            <p>3. Llame al número de emergencia local (ej. 133 en Chile) si es necesario.</p>
+          </div>
+        </ion-accordion>
+        
+      </ion-accordion-group>
+   
+    
+  </ion-content>
+</div>

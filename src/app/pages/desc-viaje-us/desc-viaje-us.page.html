@@ -1,0 +1,123 @@
+<ion-menu contentId="main-content" menuId="m7" side="start">
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-title>Menú</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content class="ion-padding">
+    <!-- Botones del menú -->
+    <ion-list>
+      <!-- Botón de Viajes -->
+      <ion-item button [routerLink]="['/index-us']">
+        
+        <ion-icon slot="start" name="git-pull-request"></ion-icon>
+        <ion-label>Viajes</ion-label>
+        
+      </ion-item>
+
+      <!-- Botón de Viajes solicitados -->
+      <ion-item button [routerLink]="['/solicitud-us']">
+        <ion-icon slot="start" name="briefcase-outline"></ion-icon>
+        <ion-label>Viajes solicitados</ion-label>
+      </ion-item>
+
+      <!-- Botón de Historial -->
+      <ion-item button [routerLink]="['/viajes-us']">
+        <ion-icon slot="start" name="time-outline"></ion-icon>
+        <ion-label>Historial de viajes</ion-label>
+ 
+      </ion-item>
+
+      <!-- Botón de Seguridad -->
+      <ion-item button [routerLink]="['/seguridad-us']">
+        <ion-icon slot="start" name="shield-checkmark-outline"></ion-icon>
+        <ion-label>Seguridad</ion-label>
+      </ion-item>
+
+      <!-- Botón de Modo Conductor con color diferente y redondeado -->
+      <ion-item button color="secondary" class="driver-mode-button" lines="none" [routerLink]="['/info-uc']">
+        <ion-icon slot="start" name="car-outline"></ion-icon>
+        <ion-label>Modo Conductor</ion-label>
+   
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+
+
+<!-- Contenido principal -->
+<div class="ion-page" id="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <!-- Botón del menú a la izquierda -->
+      <ion-buttons slot="start">
+        <ion-menu-button menu="m7"></ion-menu-button>
+      </ion-buttons>
+
+      <!-- Título centrado -->
+      <ion-title class="ion-text-center">UrbanMove</ion-title>
+      <!-- Botón de perfil al final de la barra -->
+      <ion-buttons slot="end">
+        <ion-button [routerLink]="['/perfil-us']">
+          <ion-icon slot="icon-only" name="person-circle-outline"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+<!-- Termina el header -->
+<!-- comienza el contenido -->
+
+<ion-content class="ion-padding">
+  <ion-card class="travel-card">
+    <ion-card-header>
+      <ion-card-title>Detalles del Viaje</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <!-- Información del Viaje -->
+      <div class="travel-info">
+        <h3>Hora de Salida:</h3>
+        <p>08:00 AM</p>
+    
+        <h3>Lugar de Salida:</h3>
+        <p>Penco, La Heras</p>
+    
+        <h3>Lugar de Destino:</h3>
+        <p>Concepción, Tucapel con O'Higgins y Barros</p>
+    
+        <h3>Valor del Viaje:</h3>
+        <p>$2,000 por persona</p>
+      </div>
+    
+      <!-- Información del Conductor -->
+      <div class="driver-info">
+        <ion-avatar class="driver-photo">
+          <img src="assets/img/driver.jpg" alt="Foto del Conductor">
+        </ion-avatar>
+        <div class="driver-details">
+          <h3>Nombre del Conductor:</h3>
+          <p>Juan Pérez</p>
+        </div>
+      </div>
+    
+      <!-- Título para ingresar destino exacto -->
+      <h2 class="ion-text-center" color="light">Ingrese su destino exacto</h2>
+      
+      <!-- Cuadro de texto para escribir el destino -->
+      <ion-item class="ion-padding"> 
+        <ion-input placeholder="Escribe tu destino aquí"></ion-input>
+      </ion-item>
+    
+      <!-- Botones -->
+      <div class="button-group">
+        <ion-button id="present" color="primary" >solicitar viaje</ion-button>
+        <ion-alert trigger="present" class="custom-alert" header="¿Seguro qieres solicitar el viaje?" [buttons]="alertButtons"></ion-alert>
+        <ion-button  color="light" [routerLink]="['/index-us']">Cancelar</ion-button>
+      </div>
+    </ion-card-content>
+    
+  </ion-card>
+</ion-content>
+

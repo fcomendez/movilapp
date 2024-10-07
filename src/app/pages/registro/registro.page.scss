@@ -1,0 +1,12 @@
+.form-item {
+    --highlight-color-focused: var(--ion-color-primary);
+    margin-bottom: 15px;
+  }
+  
+  ion-label {
+    font-weight: bold;
+  }
+  
+  ion-input {
+    color: var(--ion-color-dark);
+  }

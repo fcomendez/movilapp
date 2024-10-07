@@ -1,0 +1,121 @@
+<ion-menu contentId="main-content" menuId="m16" side="start">
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-title>Menú</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content class="ion-padding">
+    <!-- Botones del menú -->
+    <ion-list>
+      <!-- Botón de Viajes -->
+      <ion-item button [routerLink]="['/index-adm']">
+        <ion-label>Menu principal</ion-label>
+      </ion-item>
+
+            <!-- Botón de Registro de viajes realizados -->
+      <ion-item button [routerLink]="['/reg-viajes-adm']">
+        <ion-label>Registro de viajes realizados</ion-label>
+      </ion-item>
+
+      <!-- Botón de Registro de viajes -->
+      <ion-item button [routerLink]="['/reg-us-adm']">
+        <ion-label>Registro de usuarios</ion-label>
+      </ion-item>
+
+      <!-- Botón de Registro de conductores -->
+      <ion-item button [routerLink]="['/reg-uc-adm']">
+        <ion-label>Registro de conductores</ion-label>
+      </ion-item>
+      <!-- Botón de Solicitud de cuenta conductores -->
+      <ion-item button [routerLink]="['/solic-uc-adm']">
+        <ion-label>Solicitud de cuenta conductores</ion-label>
+      </ion-item>
+      
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+
+<!-- Contenido principal -->
+<div class="ion-page" id="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <!-- Botón del menú a la izquierda -->
+      <ion-buttons slot="start">
+        <ion-menu-button menu="m16"></ion-menu-button>
+      </ion-buttons>
+
+      <!-- Título centrado -->
+      <ion-title class="ion-text-center">UrbanMove</ion-title>
+      <!-- Botón de perfil al final de la barra -->
+      <ion-buttons slot="end">
+        <ion-button [routerLink]="['/perfil-us']">
+          <ion-icon slot="icon-only" name="person-circle-outline"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+<!-- Termina el header -->
+<!-- comienza el contenido -->
+
+<ion-content>
+  <ion-grid>
+    <ion-row class="ion-align-items-center">
+      <!-- Flecha hacia la izquierda -->
+      <ion-col size="auto">
+        <ion-button fill="clear" [routerLink]="['/reg-us-adm']">
+          <ion-icon name="chevron-back-outline"></ion-icon>
+        </ion-button>
+      </ion-col>
+      
+      <!-- Título centrado -->
+      <ion-col size="7">
+        <h3 class="ion-text-center">Detalles del usuario</h3>
+      </ion-col>
+
+      
+    </ion-row>
+  </ion-grid>
+  <ion-card>
+
+
+    <ion-card-content>
+      <ion-item color="primary">
+        <ion-label>
+          <h2>Nombre</h2>
+          <p>Juan</p>
+        </ion-label>
+      </ion-item>
+
+      <ion-item color="secondary">
+        <ion-label>
+          <h2>Apellido</h2>
+          <p>Pérez</p>
+        </ion-label>
+      </ion-item>
+
+      <ion-item color="primary">
+        <ion-label>
+          <h2>Teléfono</h2>
+          <p>123-456-7890</p>
+        </ion-label>
+      </ion-item>
+
+      <ion-item color="secondary">
+        <ion-label>
+          <h2>Correo Institucional</h2>
+          <p>juan.perezejemplo.com</p>
+        </ion-label>
+      </ion-item>
+
+      <ion-item color="primary">
+        <ion-label>
+          <h2>Contraseña</h2>
+          <p>juanperes123</p>
+        </ion-label>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+

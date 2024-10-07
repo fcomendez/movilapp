@@ -1,0 +1,110 @@
+<ion-menu contentId="main-content" menuId="m3" side="start">
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-title>Menú</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content class="ion-padding">
+    <!-- Botones del menú -->
+    <ion-list>
+      <!-- Botón de Viajes -->
+      <ion-item button [routerLink]="['/index-us']">
+        
+        <ion-icon slot="start" name="git-pull-request"></ion-icon>
+        <ion-label>Viajes</ion-label>
+        
+      </ion-item>
+
+      <!-- Botón de Viajes solicitados -->
+      <ion-item button [routerLink]="['/solicitud-us']">
+        <ion-icon slot="start" name="briefcase-outline"></ion-icon>
+        <ion-label>Viajes solicitados</ion-label>
+      </ion-item>
+
+      <!-- Botón de Historial -->
+      <ion-item button [routerLink]="['/viajes-us']">
+        <ion-icon slot="start" name="time-outline"></ion-icon>
+        <ion-label>Historial de viajes</ion-label>
+ 
+      </ion-item>
+
+      <!-- Botón de Seguridad -->
+      <ion-item button [routerLink]="['/seguridad-us']">
+        <ion-icon slot="start" name="shield-checkmark-outline"></ion-icon>
+        <ion-label>Seguridad</ion-label>
+      </ion-item>
+
+      <!-- Botón de Modo Conductor con color diferente y redondeado -->
+      <ion-item button color="secondary" class="driver-mode-button" lines="none" [routerLink]="['/info-uc']">
+        <ion-icon slot="start" name="car-outline"></ion-icon>
+        <ion-label>Modo Conductor</ion-label>
+   
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+
+<!-- Contenido principal -->
+<div class="ion-page" id="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <!-- Botón del menú a la izquierda -->
+      <ion-buttons slot="start">
+        <ion-menu-button menu="m3"></ion-menu-button>
+      </ion-buttons>
+
+      <!-- Título centrado -->
+      <ion-title class="ion-text-center">UrbanMove</ion-title>
+      <!-- Botón de perfil al final de la barra -->
+      <ion-buttons slot="end">
+        <ion-button [routerLink]="['/perfil-us']">
+          <ion-icon slot="icon-only" name="person-circle-outline"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+<!-- Termina el header -->
+<!-- comienza el contenido -->
+  <ion-content class="ion-padding">
+    <h2 class="ion-text-center">Historial de viajes </h2>
+    <!-- Lista de viajes -->
+    <ion-list>
+      <!-- Viaje 1 -->
+      <ion-item class="viaje">
+        <ion-label>
+          <h3>Fecha de Salida: 20/09/24 - 08:00 AM</h3>
+          <p>Lugar de Destino: Penco, la heras</p>
+          <p>Lugar de Salida: Duoc uc</p>
+          <p>Valor del Viaje: $3,000 por persona</p>
+        </ion-label>
+        <ion-icon name="chevron-forward-outline" slot="end" class="travel-icon" [routerLink]="['/desc-viajes-2-us']"></ion-icon>
+      </ion-item>
+
+      <!-- Viaje 2 -->
+      <ion-item class="viaje">
+        <ion-label>
+          <h3>Fecha de Salida: 20/09/24 - 08:00 AM</h3>
+          <p>Lugar de Destino: hualpen la floresta 3</p>
+          <p>Lugar de Salida: Duoc uc</p>
+          <p>Valor del Viaje: $1,000 por persona</p>
+        </ion-label>
+        <ion-icon name="chevron-forward-outline" slot="end" class="travel-icon" [routerLink]="['/desc-viajes-2-us']"></ion-icon>
+      </ion-item>
+
+      <!-- Viaje 3 -->
+      <ion-item class="viaje">
+        <ion-label>
+          <h3>Fecha de Salida: 20/09/24 - 08:00 AM</h3>
+          <p>Lugar de Destino: Concepción ,tucapel con ohiggins y barros</p>
+          <p>Lugar de Salida: Duoc uc</p>
+          <p>Valor del Viaje: $2,000 por persona</p>
+        </ion-label>
+        <ion-icon name="chevron-forward-outline" slot="end" class="travel-icon" [routerLink]="['/desc-viajes-2-us']"></ion-icon>
+      </ion-item>
+      
+      <!-- Agrega más viajes aquí si es necesario -->
+    </ion-list>
+  </ion-content>
+</div>

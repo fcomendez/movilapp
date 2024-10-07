@@ -1,0 +1,13 @@
+.button-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  
+  ion-button {
+    margin: 10px 0; /* Espaciado entre botones */
+    width: 80%; /* Ancho del botón */
+  }
+  
