@@ -1,5 +1,3 @@
-
-
 <!-- Contenido principal -->
 <div class="ion-page" id="main-content">
   <ion-header>
@@ -9,68 +7,48 @@
     </ion-toolbar>
   </ion-header>
 
-
   <ion-content class="ion-padding">
-    
-
-        <ion-grid>
-          <ion-row>
-            <!-- Flecha hacia la izquierda (start) -->
-            <ion-col size="auto">
-              <ion-button fill="clear" [routerLink]="['/index']">
-              <ion-icon name="chevron-back-outline"></ion-icon>
-            </ion-button>
-          </ion-col>
-          <!-- Título centrado -->
-            <ion-col size="auto">
-              <h3>Formulario de registro</h3>
-            </ion-col>
-            
-            
-          </ion-row>
-        </ion-grid>
-        <form>
-          <!-- Nombre -->
-          <ion-item class="form-item">
-            <ion-label color="primary" position="floating">Nombre</ion-label>
-            <ion-input type="text" name="nombre" required></ion-input>
-          </ion-item>
-      
-          <!-- Apellido -->
-          <ion-item class="form-item">
-            <ion-label color="primary" position="floating">Apellido</ion-label>
-            <ion-input type="text" name="apellido" required></ion-input>
-          </ion-item>
-      
-          <!-- Número de Teléfono -->
-          <ion-item class="form-item">
-            <ion-label color="primary" position="floating">Número de Teléfono</ion-label>
-            <ion-input type="tel" name="telefono" required></ion-input>
-          </ion-item>
-      
-          <!-- Correo Institucional -->
-          <ion-item class="form-item">
-            <ion-label color="primary" position="floating">Correo Institucional Duoc UC</ion-label>
-            <ion-input type="email" name="correo" required></ion-input>
-          </ion-item>
-      
-          <!-- Contraseña -->
-          <ion-item class="form-item">
-            <ion-label color="primary" position="floating">Contraseña</ion-label>
-            <ion-input type="password" name="contrasena" required></ion-input>
-          </ion-item>
-      
-          <!-- Confirmar Contraseña -->
-          <ion-item class="form-item">
-            <ion-label color="primary" position="floating">Confirmar Contraseña</ion-label>
-            <ion-input type="password" name="confirmarContrasena" required></ion-input>
-          </ion-item>
-      
-          <!-- Botón Registrar -->
-           
-          <ion-button expand="full" color="secondary" type="submit" [routerLink]="['/index']">
-            Registrar
+    <ion-grid>
+      <ion-row>
+        <ion-col size="auto">
+          <ion-button fill="clear" [routerLink]="['/index']">
+            <ion-icon name="chevron-back-outline"></ion-icon>
           </ion-button>
-        </form>
+        </ion-col>
+        <ion-col size="auto">
+          <h3>Formulario de registro</h3>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    
+    <form [formGroup]="registroForm">
+      <ion-item class="form-item">
+        <ion-label color="primary" position="floating">Nombre completo</ion-label>
+        <ion-input formControlName="nombre"></ion-input>
+      </ion-item>
+      <ion-item class="form-item">
+        <ion-label color="primary" position="floating">Número de Teléfono</ion-label>
+        <ion-input type="tel" formControlName="telefono" required></ion-input>
+      </ion-item>
+
+      <ion-item class="form-item">
+        <ion-label color="primary" position="floating">Correo Institucional Duoc UC</ion-label>
+        <ion-input type="email" formControlName="email" required></ion-input>
+      </ion-item>
+
+      <ion-item class="form-item">
+        <ion-label color="primary" position="floating">Contraseña</ion-label>
+        <ion-input type="password" formControlName="contrasena" required></ion-input>
+      </ion-item>
+
+      <ion-item class="form-item">
+        <ion-label color="primary" position="floating">Confirmar Contraseña</ion-label>
+        <ion-input type="password" formControlName="confirmarContrasena" required></ion-input>
+      </ion-item>
+
+      <ion-button expand="full" color="secondary" type="submit" (click)="guardar()">
+        Registrar
+      </ion-button>
+    </form>
   </ion-content>
 </div>

@@ -1,7 +1,7 @@
-export interface Login{
-    Login: Login[];
+export interface Registro{
+  Registro: Registro[];
   }
-  export interface Login {
+  export interface Registro {
     idCategory: number;
     nombre: string;
     apellido: string;
