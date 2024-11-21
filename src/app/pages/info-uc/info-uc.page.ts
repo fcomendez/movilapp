@@ -5,8 +5,11 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './info-uc.page.html',
   styleUrls: ['./info-uc.page.scss'],
 })
+
 export class InfoUcPage implements OnInit {
 
+
+  isChecked: boolean = false;
   constructor() { }
 
   ngOnInit() {

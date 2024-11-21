@@ -49,7 +49,7 @@
 <!-- Contenido principal -->
 <div class="ion-page" id="main-content">
   <ion-header>
-    <ion-toolbar>
+    <ion-toolbar color="primary">
       <!-- Botón del menú a la izquierda -->
       <ion-buttons slot="start">
         <ion-menu-button menu="m9"></ion-menu-button>
@@ -153,12 +153,16 @@
 
   <!-- Checkbox de términos y condiciones -->
   <ion-item lines="none">
-    <ion-checkbox slot="start"></ion-checkbox>
+    <ion-checkbox slot="start" [(ngModel)]="isChecked"></ion-checkbox>
     <ion-label>He leído todo y acepto los términos</ion-label>
   </ion-item>
-
+  
   <!-- Botón de registro -->
-  <ion-button expand="block" color="success"[routerLink]="['/vehicle-form']">
+  <ion-button 
+    expand="block" 
+    color="success" 
+    [routerLink]="['/vehicle-form']"
+    [disabled]="!isChecked">
     Registrarse como Conductor
   </ion-button>
 </ion-content>
